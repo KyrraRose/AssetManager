@@ -11,17 +11,20 @@ public class Main {
         allAssets.add(myCar);
         Asset newCar = new Vehicle("Going Camping","10/28/2025",30000,"Subaru Outback",2025,100);
         allAssets.add(newCar);
+        System.out.println("All Assets");
+        System.out.println();
+        String d = "$";
 
         for (Asset asset : allAssets) {
             if (asset instanceof House) {
-                System.out.println("This is a house");
-                System.out.printf("%s|%s|%s|$%.2f|");
+                System.out.printf("House:  %-47s |%-20s | %-13s |%4s%-10.2f | %10d sq. ft. | %10d sq. ft. lot |\n", ((House) asset).getAddress(),asset.getDescription(),asset.getDateAcquired(),d,asset.getValue(),((House) asset).getSquareFoot(),((House) asset).getLotSize());
 
-            } else if (vehicle instanceof Moped) {
-                System.out.println("MOPED TYPE OF VEHICLE");
+            } else if (asset instanceof Vehicle) {
+                System.out.printf("Vehicle:  %-15s | %-10s | %d | %-10s | %4s%-10.2f | %6d miles |\n",asset.getDescription(),((Vehicle) asset).getMakeModel(),((Vehicle) asset).getYear(),asset.getDateAcquired(),d,asset.getValue(),((Vehicle) asset).getOdometer());
+
             }
 
-            System.out.println(vehicle);
+
             System.out.println();
         }
     }
