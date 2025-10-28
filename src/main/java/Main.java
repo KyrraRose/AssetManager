@@ -17,10 +17,10 @@ public class Main {
 
         for (Asset asset : allAssets) {
             if (asset instanceof House) {
-                System.out.printf("House:  %-47s |%-20s | %-13s |%4s%-10.2f | %10d sq. ft. | %10d sq. ft. lot |\n", ((House) asset).getAddress(),asset.getDescription(),asset.getDateAcquired(),d,asset.getValue(),((House) asset).getSquareFoot(),((House) asset).getLotSize());
+                System.out.printf("House:  %-47s | %-20s | %-13s | Original Value: %4s%-10.2f |Current Value: %4s%-10.2f | %10d sq. ft. | %10d sq. ft. lot |\n", ((House) asset).getAddress(),asset.getDescription(),asset.getDateAcquired(),d,asset.getOriginalCost(),d,asset.getValue(),((House) asset).getSquareFoot(),((House) asset).getLotSize());
 
             } else if (asset instanceof Vehicle) {
-                System.out.printf("Vehicle:  %-15s | %-10s | %d | %-10s | %4s%-10.2f | %6d miles |\n",asset.getDescription(),((Vehicle) asset).getMakeModel(),((Vehicle) asset).getYear(),asset.getDateAcquired(),d,asset.getValue(),((Vehicle) asset).getOdometer());
+                System.out.printf("Vehicle:  %-15s | %-10s | %d | %-10s | Original Value: %4s%-10.2f | Current Value: %4s%-10.2f | %6d miles |\n",asset.getDescription(),((Vehicle) asset).getMakeModel(),((Vehicle) asset).getYear(),asset.getDateAcquired(),d,asset.getOriginalCost(),d,asset.getValue(),((Vehicle) asset).getOdometer());
 
             }
 
